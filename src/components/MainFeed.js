@@ -1,17 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
+
 function MainFeed( {pokemons} ) {
+
+
   return(
     <div>
-      <div>
+      <ul style={{ display: "flex", flexWrap: "wrap" }}>
       {pokemons.length > 0 ? (
         pokemons.map((pokemon) => (
-          <div>
+          <div className='card'>
             <article>
-              <p>{pokemon.name}</p>
-              <p>{pokemon.location}</p>
-              <p>{pokemon.move}</p>
+              <h1>{pokemon.name}</h1>
+              <p><strong>Location:</strong> <em>{pokemon.location}</em></p>
+              <p><strong>Signature Move:</strong> <em>{pokemon.move}</em></p>
             </article>
             <Link className='btn' to={`/pokemon/${pokemon.id}`}>View</Link>
           </div>
@@ -21,7 +24,7 @@ function MainFeed( {pokemons} ) {
         <p>Nothing here</p>
         </>
       )}
-      </div>
+      </ul>
     </div>
   );
 }

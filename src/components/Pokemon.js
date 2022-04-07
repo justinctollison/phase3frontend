@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import ReviewFeed from './ReviewFeed';
 import NewReview from './NewReview';
 
+
 function Pokemon() {
 
     const [pokemon, setPokemon] = useState("")
@@ -30,16 +31,17 @@ function Pokemon() {
 
   return (
     <div>
+      <div className='card'>
         <h1>{pokemon.name}</h1>
-        <p>{pokemon.location}</p>
-        <p>{pokemon.move}</p>
-        <p>{pokemon.id}</p>
-        <div>
-            <NewReview pokemon_id={pokemon.id} />
-        </div>
-        <div>
-            <ReviewFeed reviews={reviews} />
-        </div>
+        <p><strong>Location:</strong> <em>{pokemon.location}</em></p>
+        <p><strong>Signature Move:</strong> <em>{pokemon.move}</em></p>
+      </div>
+      <div>
+          <ReviewFeed reviews={reviews} />
+      </div>
+      <div className='comment-body'>
+          <NewReview pokemon_id={pokemon.id} />
+      </div>
     </div>
   )
 }

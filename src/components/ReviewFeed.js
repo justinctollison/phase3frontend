@@ -41,14 +41,16 @@ function ReviewFeed( {reviews} ) {
     }
 
   return (
-    <div>
-        {reviews.map((review) => 
-        <div>
-            <h2>Anonnymous:</h2>
-            <p>{review.text}</p>
-            <p>Rating: {review.rating}</p>
-            <DeleteReview reviews_id={review.id}/>
-        </div>)}
+    <div className='comment'>
+        <ol className='comment-body'>
+            {reviews.map((review) => 
+            <li className='card'>
+                <h3>Anonnymous:</h3>
+                <p className='div-feed'>{review.text}</p>
+                <p><strong>Rating: </strong>{review.rating}</p>
+                <DeleteReview reviews_id={review.id}/>
+            </li>)}
+        </ol>
     </div>
   )
 }

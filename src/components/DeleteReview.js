@@ -25,7 +25,7 @@ function DeleteReview( {reviews_id} ) {
 
   return (
     <div>
-        <button className='' onClick={handleDelete}>Delete</button>
+        <button className='btn' onClick={handleDelete}>Delete</button>
     </div>
   )
 }
