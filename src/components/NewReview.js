@@ -34,7 +34,7 @@ function NewReview( {pokemon_id} ) {
 
   return (
     <div >
-        <h3>Create Comment</h3>
+        <h3>Create Review</h3>
         <form onSubmit={handleSubmit} id={pokemon_id}>
                 <label htmlFor='text'></label>
                 <textarea

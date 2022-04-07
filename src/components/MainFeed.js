@@ -13,7 +13,7 @@ function MainFeed( {pokemons} ) {
               <p>{pokemon.location}</p>
               <p>{pokemon.move}</p>
             </article>
-            <Link className='btn' to={`/pokemon/${pokemon.id}`}></Link>
+            <Link className='btn' to={`/pokemon/${pokemon.id}`}>View</Link>
           </div>
         ))
       ) : (
