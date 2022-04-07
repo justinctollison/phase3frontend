@@ -1,31 +1,32 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
+import DeleteReview from './DeleteReview';
 
-function ReviewFeed() {
+function ReviewFeed( {reviews} ) {
 
     const navigate = useNavigate()
     const { id } = useParams()
 
-    const [reviews, setReviews] = useState([])
+    // const [reviews, setReviews] = useState([])
 
 
 
-    const getProfile = async () => {
-        const response = await fetch(`http://localhost:9292/pokemon/${id}/reviews`);
-        const data = await response.json();
-        setReviews(data.reviews);
-      };
+    // const getProfile = async () => {
+    //     const response = await fetch(`http://localhost:9292/pokemon/${id}/reviews`);
+    //     const data = await response.json();
+    //     setReviews(data.reviews);
+    //   };
 
-    useEffect(() => {
-        getProfile();
-    }, []);
+    // useEffect(() => {
+    //     getProfile();
+    // }, []);
 
     
     console.log(reviews)
 
     function handleDelete(e) {
         e.preventDefault();
-        fetch(`http://localhost:9292/pokemon/${id}/reviews`, {
+        fetch(`http://localhost:9292/reviews/${reviews.id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -46,6 +47,7 @@ function ReviewFeed() {
             <h2>Anonnymous:</h2>
             <p>{review.text}</p>
             <p>Rating: {review.rating}</p>
+            <DeleteReview reviews_id={review.id}/>
         </div>)}
     </div>
   )
