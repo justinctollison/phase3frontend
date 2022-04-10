@@ -7,11 +7,11 @@ function Navbar() {
         <nav>
             <div className='div-header'>
                 <div style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
-                    <h2>Welcome to PokeViewer!</h2>
+                    <h2>PokeViewer</h2>
                 </div>
                 <div style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
                     <Link to="/pokemon" className='btn'>
-                        Main Feed
+                        PokeFeed
                     </Link>
                 </div>
             </div>

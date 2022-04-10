@@ -14,7 +14,7 @@ code {
 
 .btn {
   display: inline-block;
-  background: #000;
+  background: rgb(231, 22, 22);
   color: #fff;
   border: none;
   padding: 10px 20px;
