@@ -13,6 +13,9 @@ function Navbar() {
                     <Link to="/pokemon" className='btn'>
                         PokeFeed
                     </Link>
+                    <Link to="/" className='btn'>
+                        About
+                    </Link>
                 </div>
             </div>
         </nav>
